@@ -4,7 +4,7 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-return nombre.charAt(0).toUpperCase() + nombre.slice(1)
+return nombre[0].toUpperCase() + nombre.slice(1)
 }
 
 function invocarCallback(cb) {
@@ -39,9 +39,10 @@ function forEach(array, cb) {
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
 
-  array.forEach(function(elemento){
-    cb(elemento);
+  array.forEach(function(elementoDEarray){
+    cb(elementoDEarray);
   })
+  
 //   for ( var i= 0 ; i< array.length ; i++){
 //   cb(array[i]);
 //  }
@@ -56,6 +57,13 @@ function map(array, cb) {
     return cb(x);
   })
 return newarray
+
+
+// var nuevoArray = []
+// for ( var i = 0 ; i < array.length; i++){
+//   nuevoArray.push(cb(array[i]));
+// }
+// return nuevoArray;
 }
 
 function filter(array) {
@@ -64,9 +72,13 @@ function filter(array) {
   //Tu código:
 
 var narray = array.filter(function(x){
-  return x[0]=== "a"
+  //  ((forma corta))  return x[0]=== "a"
+  if (x[0] === "a"){
+    return x;
+  }
+
 })
-  return narray 
+return narray
 
 }
 // No modificar nada debajo de esta línea
